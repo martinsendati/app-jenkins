@@ -61,13 +61,18 @@ spec:
 
         stage('buildear imagen') {
             steps {
-               sh "docker build -t marto-app/v1 ." 
+               sh "docker build -t marto-app:v1 ." 
+            }
+        }
+
+        stage('docker login') {
+            steps {
+               sh "docker login -u martooo -p arquitectura123"
             }
         }
 
         stage('docker push') {
             steps {
-               sh "docker login -u martooo -p arquitectura123"
                sh "docker push martooo/marto-app:v1 "
             }
         }
