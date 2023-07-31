@@ -65,6 +65,12 @@ spec:
             }
         }
 
+        stage('docker tag') {
+            steps {
+               sh "docker tag marto-app:v1 martooo/marto-app:v1"
+            }
+        }
+
         stage('docker login') {
             steps {
                sh "docker login -u martooo -p arquitectura123"
