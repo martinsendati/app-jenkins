@@ -1,5 +1,5 @@
 # Usa una imagen base de Nginx para servir la página web
-FROM nginx:latest
+FROM ubuntu:latest
 
 # Copia los archivos al directorio de trabajo de Nginx
 COPY index.html /usr/share/nginx/html
