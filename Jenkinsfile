@@ -67,7 +67,7 @@ spec:
 
         stage('docker push') {
             steps {
-               sh "docker login -u martooo -p arquitectura123
+               sh "docker login -u martooo -p arquitectura123"
                sh "docker push martooo/marto-app"
             }
         }
