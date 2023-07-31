@@ -1,7 +1,7 @@
 pipeline {
 
     environment {
-        APP_NAME = "web-de-marto"
+        APP_NAME = "marto-app"
 
     }
 
@@ -57,8 +57,13 @@ spec:
             steps {
                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/app-jenkins'
             }
-        }
+        } 
 
+        stage('buildear imagen') {
+            steps {
+               sh "docker build -t marto-app ." 
+            }
+        }
 
         }
 
