@@ -3,7 +3,7 @@ pipeline {
     environment {
         APP_NAME = "marto-app"
         APP_TAG = "{BUILD_NUMBER}"
-        USER_APP = martooo
+        USER_APP = "martooo"
 
    }
 
