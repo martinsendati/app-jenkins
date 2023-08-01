@@ -2,9 +2,11 @@ pipeline {
 
     environment {
         APP_NAME = "marto-app"
-        USER_NAME = "martooo"
         APP_TAG = "{BUILD_NUMBER}"
-    }
+        USER_APP = martooo
+
+   }
+
 
     agent {
        kubernetes {
@@ -62,13 +64,13 @@ spec:
 
         stage('buildear imagen') {
             steps {
-               sh "docker build -t $APP_NAME:$APP_TAG ." 
+               sh "docker build -t martooo/$APP_NAME:$APP_TAG ." 
             }
         }
 
         stage('docker tag') {
             steps {
-               sh "docker tag marto-app:v1 $USER_NAME/$APP_NAME"
+               sh "docker tag marto-app:v1 martooo/$APP_NAME"
             }
         }
 
