@@ -70,19 +70,19 @@ spec:
 
         stage('docker tag') {
             steps {
-               sh "docker tag $APP_NAME:${BUILD_NUMBER} $USER_NAME/$APP_NAME:${BUILD_NUMBER}"
+               sh "docker tag $APP_NAME:${BUILD_NUMBER} martooo/$APP_NAME:${BUILD_NUMBER}"
             }
         }
 
         stage('docker login') {
             steps {
-               sh "docker login -u $USER_NAME -p $PASS"
+               sh "docker login -u martooo -p arquitectura123
             }
         }
 
         stage('docker push') {
             steps {
-               sh "docker push $USER_NAME/$APP_NAME:${BUILD_NUMBER} "
+               sh "docker push martooo/$APP_NAME:${BUILD_NUMBER} "
             }
         }
         }
