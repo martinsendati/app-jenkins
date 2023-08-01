@@ -64,13 +64,13 @@ spec:
 
         stage('buildear imagen') {
             steps {
-               sh "docker build martooo/$APP_NAME ." 
+               sh "docker build -t $APP_NAME:$APP_TAG ." 
             }
         }
 
         stage('docker tag') {
             steps {
-               sh "docker tag marto-app:v1 martooo/$APP_NAME:$APP_TAG"
+               sh "docker tag $APP_NAME:$APP_TAG USER_NAME/$APP_NAME:$APP_TAG"
             }
         }
 
