@@ -4,7 +4,7 @@ pipeline {
         APP_NAME = "marto-app"
         APP_TAG = "{BUILD_NUMBER}"
         USER_APP = "martooo"
-
+        PASS = "arquitectura123"
    }
 
 
@@ -70,13 +70,13 @@ spec:
 
         stage('docker tag') {
             steps {
-               sh "docker tag $APP_NAME:${BUILD_NUMBER} USER_NAME/$APP_NAME:${BUILD_NUMBER}"
+               sh "docker tag $APP_NAME:${BUILD_NUMBER} $USER_NAME/$APP_NAME:${BUILD_NUMBER}"
             }
         }
 
         stage('docker login') {
             steps {
-               sh "docker login -u $USER_NAME -p arquitectura123"
+               sh "docker login -u $USER_NAME -p $PASS"
             }
         }
 
