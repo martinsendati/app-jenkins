@@ -70,7 +70,7 @@ spec:
 
         stage('docker tag') {
             steps {
-               sh "docker tag $APP_NAME:$APP_TAG USER_NAME/$APP_NAME:$APP_TAG"
+               sh "docker tag $APP_NAME:${BUILD_NUMBER} USER_NAME/$APP_NAME:${BUILD_NUMBER}"
             }
         }
 
@@ -82,7 +82,7 @@ spec:
 
         stage('docker push') {
             steps {
-               sh "docker push $USER_NAME/$APP_NAME:$APP_TAG "
+               sh "docker push $USER_NAME/$APP_NAME:${BUILD_NUMBER} "
             }
         }
         }
