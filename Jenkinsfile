@@ -64,7 +64,7 @@ spec:
 
         stage('buildear imagen') {
             steps {
-               sh "docker build -t $APP_NAME:$APP_TAG ." 
+               sh "docker build -t $APP_NAME:${BUILD_NUMBER} ." 
             }
         }
 
