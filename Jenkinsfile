@@ -2,7 +2,8 @@ pipeline {
 
     environment {
         APP_NAME = "marto-app"
-
+        USER_NAME = "martooo"
+        APP_TAG = "{BUILD_NUMBER}"
     }
 
     agent {
@@ -61,25 +62,25 @@ spec:
 
         stage('buildear imagen') {
             steps {
-               sh "docker build -t marto-app:v1 ." 
+               sh "docker build -t $USER_NAME:$APP_NAME:$APP_TAG ." 
             }
         }
 
         stage('docker tag') {
             steps {
-               sh "docker tag marto-app:v1 martooo/marto-app:v1"
+               sh "docker tag marto-app:v1 $USER_NAME/$APP_NAME"
             }
         }
 
         stage('docker login') {
             steps {
-               sh "docker login -u martooo -p arquitectura123"
+               sh "docker login -u $USER_NAME -p arquitectura123"
             }
         }
 
         stage('docker push') {
             steps {
-               sh "docker push martooo/marto-app:v1 "
+               sh "docker push $USER_NAME/$APP_NAME:$APP_TAG "
             }
         }
         }
