@@ -4,7 +4,9 @@ pipeline {
         APP_NAME = "marto-app"
         APP_TAG = "{BUILD_NUMBER}"
         USER_APP = "martooo"
-        PASS = "arquitectura123"
+        USER_PASS = "arquitectura123"
+        REPO_GIT = "https://github.com/martinsendati/app-jenkins"
+        
    }
 
 
@@ -58,25 +60,25 @@ spec:
 
         stage('Clonar repo') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/app-jenkins'
+                git branch: 'main', changelog: false, poll: false, url: '$REPO_GIT'
             }
         } 
 
         stage('buildear imagen') {
             steps {
-                sh "docker build -t martooo/$APP_NAME:${BUILD_NUMBER} ." 
+                sh "docker build -t $USER_APP/$APP_NAME:$APP_TAG ." 
             }
         }
 
         stage('docker login') {
             steps {
-                sh "docker login -u martooo -p arquitectura123"
+                sh "docker login -u $USER_APP -p $USER_PASS"
             }
         }
 
         stage('docker push') {
             steps {
-                sh "docker push martooo/$APP_NAME:${BUILD_NUMBER} "
+                sh "docker push $USER_NAME/$APP_NAME:$APP_TAG "
             }
         } 
     } 
