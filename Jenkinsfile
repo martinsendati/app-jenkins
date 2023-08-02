@@ -2,7 +2,7 @@ pipeline {
 
     environment {
         APP_NAME = "marto-app"
-        APP_TAG = "{BUILD_NUMBER}"
+        APP_TAG = "${BUILD_NUMBER}"
         USER_NAME = "martooo"
         USER_PASS = "arquitectura123"
         REPO_GIT = "https://github.com/martinsendati/app-jenkins"
@@ -66,7 +66,7 @@ spec:
 
         stage('buildear imagen') {
             steps {
-                sh "docker build -t $USER_NAME/$APP_NAME:${BUILD_NUMBER} ." 
+                sh "docker build -t $USER_NAME/$APP_NAME:$APP_TAG ." 
             }
         }
 
@@ -78,7 +78,7 @@ spec:
 
         stage('docker push') {
             steps {
-                sh "docker push $USER_NAME/$APP_NAME:${BUILD_NUMBER} "
+                sh "docker push $USER_NAME/$APP_NAME:$APP_TAG "
             }
         } 
     } 
