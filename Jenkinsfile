@@ -58,36 +58,26 @@ spec:
 
         stage('Clonar repo') {
             steps {
-               git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/app-jenkins'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/app-jenkins'
             }
         } 
 
         stage('buildear imagen') {
             steps {
-               sh "docker build -t martooo/$APP_NAME:${BUILD_NUMBER} ." 
+                sh "docker build -t martooo/$APP_NAME:${BUILD_NUMBER} ." 
             }
         }
 
-        // stage('docker tag') {
-        //     steps {
-        //        sh "docker tag $APP_NAME:${BUILD_NUMBER} martooo/$APP_NAME:${BUILD_NUMBER}"
-        //     }
-        // }
-
         stage('docker login') {
             steps {
-               sh "docker login -u martooo -p arquitectura123
+                sh "docker login -u martooo -p arquitectura123"
             }
         }
 
         stage('docker push') {
             steps {
-               sh "docker push martooo/$APP_NAME:${BUILD_NUMBER} "
+                sh "docker push martooo/$APP_NAME:${BUILD_NUMBER} "
             }
-        }
-        }
-
-
-
-    
+        } 
+    } 
 }
