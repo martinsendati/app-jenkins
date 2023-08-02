@@ -3,7 +3,7 @@ pipeline {
     environment {
         APP_NAME = "marto-app"
         APP_TAG = "{BUILD_NUMBER}"
-        USER_APP = "martooo"
+        USER_NAME = "martooo"
         USER_PASS = "arquitectura123"
         REPO_GIT = "https://github.com/martinsendati/app-jenkins"
         
