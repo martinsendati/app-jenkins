@@ -66,13 +66,13 @@ spec:
 
         stage('buildear imagen') {
             steps {
-                sh "docker build -t $USER_APP/$APP_NAME:$APP_TAG ." 
+                sh "docker build -t $USER_NAME/$APP_NAME:$APP_TAG ." 
             }
         }
 
         stage('docker login') {
             steps {
-                sh "docker login -u $USER_APP -p $USER_PASS"
+                sh "docker login -u $USER_NAME -p $USER_PASS"
             }
         }
 
