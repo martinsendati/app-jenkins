@@ -60,7 +60,7 @@ spec:
 
         stage('Clonar repo') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: '$REPO_GIT'
+                git branch: 'main', changelog: false, poll: false, url: "$REPO_GIT"
             }
         } 
 
