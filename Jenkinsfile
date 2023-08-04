@@ -6,7 +6,7 @@ pipeline {
         USER_NAME = "martooo"
         USER_PASS = "arquitectura123"
         REPO_GIT = "https://github.com/martinsendati/app-jenkins"
-        
+        REPO_GIT_INFRA = "https://github.com/martinsendati/infra-app-jenkins.git"
    }
 
 
@@ -58,28 +58,39 @@ spec:
   
     stages {
 
-        stage('Clonar repo') {
+        stage('Clonando repo de aplicación') {
             steps {
                 git branch: 'main', changelog: false, poll: false, url: "$REPO_GIT"
             }
         } 
 
-        stage('buildear imagen') {
+        stage('Creando la imagen') {
             steps {
                 sh "docker build -t $USER_NAME/$APP_NAME:$APP_TAG ." 
             }
         }
 
-        stage('docker login') {
+        stage('Loguenado a DockerHub') {
             steps {
                 sh "docker login -u $USER_NAME -p $USER_PASS"
             }
         }
 
-        stage('docker push') {
+        stage('Pusheadno imagen a DockerHub') {
             steps {
                 sh "docker push $USER_NAME/$APP_NAME:$APP_TAG "
             }
         } 
+        stage('Clonando repo de infraestructura de la app') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: "$REPO_GIT_INFRA"
+            }
+        }
+        stage('Modificando el deployment') {
+            steps {
+                sh "sed -i s/marto-app:.*/marto-app:$APP_TAG/g > mi-app/marto-deployment.yaml"
+            }
+        }
+
     } 
 }
