@@ -88,7 +88,7 @@ spec:
         }
         stage('Modificando el deployment') {
             steps {
-                sh "sed -i s/marto-app:.*/marto-app:$APP_TAG/g mi-app/marto-deployment.yaml"
+                sh "sed -i s/marto-app:.*/marto-app:$APP_TAG/g /mi-app/marto-deployment.yaml"
             }
         }
 
