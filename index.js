@@ -1,8 +1,8 @@
 var images = [
-  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fproyectoviajero.com%2Fmetodos-de-tortura-mas-crueles%2F&psig=AOvVaw221MLWJzEwmXHBnIqq9pFZ&ust=1691251703538000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMiKxtuxw4ADFQAAAAAdAAAAABAD",
-  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ovhcloud.com%2Fes%2Fpublic-cloud%2Fkubernetes%2Fkubernetes-load-balancer%2F&psig=AOvVaw0DK3xhXl4l8Fg17wQF0LQT&ust=1691251743620000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKCJ9u2xw4ADFQAAAAAdAAAAABAD",
-  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.influxdata.com%2Fintegration%2Fgrafana%2F&psig=AOvVaw2RwcuOX4gWLz6RZL1TLnGl&ust=1691251819582000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIDsr5Kyw4ADFQAAAAAdAAAAABAD",
-  "https://www.google.com/url?sa=i&url=https%3A%2F%2Felcomercio.pe%2Fmundial%2Ffrancia%2Fgol-de-mbappe-de-penal-para-el-3-3-de-francia-vs-argentina-por-la-final-del-mundial-2022-ver-goles-de-mbappe-hoy-video-rmmd-dtbn-noticia%2F&psig=AOvVaw3Qft-87NNV4IWdLOxFDu7q&ust=1691251850020000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCICE7KWyw4ADFQAAAAAdAAAAABAD",
+  "https://proyectoviajero.com/wp-content/uploads/2022/03/tortura-edad-media.webp",
+  "https://storage.googleapis.com/wp-tg-medialess-b0f053fb-3872-4dfd-820f-c991becafc82/2022/01/fca50d3a-kubernetes-e1643232472324.png",
+  "https://images.ctfassets.net/o7xu9whrs0u9/7Erq6IEoCaJkBtHMhblLzS/9310518537dffc123d3d9059edace8ed/Grafana-logo-2.png",
+  "https://elcomercio.pe/resizer/N6_LfzluOsWPU9hSt-qfoy5Hwfw=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/HQ5PUDJOQJG27P3ZNWXZYC335Q.jpg",
 ];
 
 function getRandomImage() {
