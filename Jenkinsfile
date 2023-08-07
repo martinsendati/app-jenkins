@@ -91,6 +91,16 @@ spec:
                 sh "sed -i s/marto-app:.*/marto-app:$APP_TAG/g mi-app/marto-deployment.yaml"
             }
         }
-
+        stage('Pushendo cambios de versión') {
+            steps {
+                sh "git add mi-app/marto-deployment.yaml"
+                sh "git config --global user.email 'martin.barrionuevo@sendati.com'"
+                sh "git config --global user.name 'martinsendati'"
+                sh "git commit -m 'cambio de versión'"
+                withCredentials([usernamePassword(credentialsId: "credenciales-github", passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/martinsendati/infra-app-jenkins.git')
+            }
+            }
+        }
     } 
 }
