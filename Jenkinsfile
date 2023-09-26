@@ -61,7 +61,6 @@ spec:
         stage('Clonando repo de aplicación') {
             steps {
                 git branch: 'main', changelog: false, poll: false, url: "$REPO_GIT"
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/app-jenkins.git'
             }
         } 
 
