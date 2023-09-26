@@ -5,7 +5,7 @@ pipeline {
         APP_TAG = "${BUILD_NUMBER}"
         USER_NAME = "martooo"
         USER_PASS = "arquitectura123"
-        REPO_GIT = "https://github.com/martinsendati/app-jenkins"
+        REPO_GIT = "https://github.com/martinsendati/app-jenkins.git"
         REPO_GIT_INFRA = "https://github.com/martinsendati/infra-appchart.git"
    }
 
@@ -61,6 +61,7 @@ spec:
         stage('Clonando repo de aplicación') {
             steps {
                 git branch: 'main', changelog: false, poll: false, url: "$REPO_GIT"
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/martinsendati/app-jenkins.git'
             }
         } 
 
