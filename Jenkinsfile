@@ -6,7 +6,7 @@ pipeline {
         USER_NAME = "martooo"
         USER_PASS = "arquitectura123"
         REPO_GIT = "https://github.com/martinsendati/app-jenkins"
-        REPO_GIT_INFRA = "https://github.com/martinsendati/infra-app-jenkins.git"
+        REPO_GIT_INFRA = "https://github.com/martinsendati/infra-appchart.git"
    }
 
 
